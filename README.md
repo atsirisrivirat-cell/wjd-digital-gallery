@@ -1,20 +1,13 @@
-# WJD Digital Art Gallery v1.5.2 — Google Drive Connected
+# WJD Digital Art Gallery v1.5.2.1 — Login Button Hotfix
 
-เวอร์ชันนี้เชื่อมเว็บกับ Google Apps Script Backend ของบัญชีโรงเรียนแล้ว
+แก้บั๊กหลังเชื่อม Google Drive ที่ปุ่มเลือกบัญชีทดลองไม่ตอบสนอง
 
-## Backend URL
+## สิ่งที่แก้
+- ปุ่มมุมขวาบน "ยังไม่ได้เข้าสู่ระบบ / เลือกบัญชีทดลอง" กดได้แน่นอนขึ้น
+- เพิ่มปุ่มสำรอง "เลือกบัญชีเพื่อเริ่มใช้งาน" มุมล่างขวาเมื่อยังไม่ได้ login
+- เพิ่ม overlay สำรองเลือกบัญชี หากระบบ login หลักไม่แสดง
+- ทำให้การผูก event listener ปลอดภัยขึ้น ไม่ให้ element เดียวที่มีปัญหาหยุดสคริปต์ทั้งหมด
+- ยังเชื่อม Google Drive Backend ของโรงเรียนเหมือน v1.5.2
 
-`https://script.google.com/macros/s/AKfycby9X2q7YZ_q33gdMoDA_6dljZqmdgWg1GMMkfz5_XE1qg7SLs_Fvvdti4j2AhxMxNuUDw/exec`
-
-## สิ่งที่เพิ่มจาก v1.5.0
-
-- ส่งผลงานแล้วพยายามบันทึกไปยัง Google Drive โรงเรียน
-- บันทึกข้อมูลผลงานลง Google Sheets ของโรงเรียน
-- ถ้าส่ง Drive ไม่สำเร็จ ยังบันทึก localStorage ไว้ก่อน
-- เพิ่มสถานะในหน้าผลงานของนักเรียนว่า Google Drive ซิงก์สำเร็จหรือยัง
-
-## สิ่งที่ยังเป็นข้อจำกัด
-
-- ระบบครูในหน้าเว็บยังอ่านจาก localStorage เป็นหลัก
-- การดึงรายการจาก Google Sheets กลับมาแสดงในเว็บจะทำในเวอร์ชันถัดไป
-- ยังเป็นระบบทดลอง ไม่ใช่ระบบล็อกอินจริง
+## วิธีอัปเดต
+อัปโหลดไฟล์ชุดนี้ทับไฟล์เดิมใน GitHub repository แล้ว Vercel จะ Deploy ใหม่อัตโนมัติ
