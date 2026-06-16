@@ -1,15 +1,15 @@
-# WJD Digital Art Gallery v1.5.6.3 — Direct Drive Upload & Visible User Admin Fix
+# WJD Digital Art Gallery v1.5.6.4 — Direct Upload Submit Fix
 
 ## แก้ปัญหา
-- ไม่เห็นส่วน “จัดการยูสเซอร์นักเรียน” ในหน้าครู
-- นักเรียนจากอีกเครื่องส่งรูปแล้วไม่เข้า Google Drive / Google Sheets
+- ส่งรูปแล้วขึ้นว่า “บันทึกในเว็บแล้ว แต่ซิงก์ Google Drive ไม่สำเร็จ”
+- สคริปต์ submit/sync หลายชุดทำงานซ้อนกัน ทำให้การส่งขึ้น Drive ไม่แน่นอน
 
-## สิ่งที่แก้ในเว็บ
-- ย้ายแผงจัดการยูสเซอร์นักเรียนมาไว้ด้านบนของหน้าครู เห็นชัดขึ้น
-- เพิ่มปุ่มรีเฟรชรายชื่อนักเรียนตรงหน้าครู
-- เพิ่ม Direct Drive Upload Sync หลังนักเรียนกดส่งงาน
-- งานที่ค้างในเครื่องจะถูกส่งซ้ำขึ้น Google Drive อัตโนมัติ
-- ตรวจว่าต้องมี fileId + fileUrl จริง จึงถือว่าส่งเข้า Drive สำเร็จ
+## สิ่งที่แก้
+- เปลี่ยนจังหวะส่งงานให้เป็น Direct Submit ทางเดียว
+- กดส่งงานแล้วบันทึกในเว็บก่อน จากนั้นส่งเข้า Google Drive ทันที
+- ต้องได้ `fileId` และ `fileUrl` ถึงจะถือว่าส่ง Drive สำเร็จ
+- ถ้าล้มเหลว จะแสดง error จริงจาก Apps Script ให้ชัดกว่าเดิม
+- ลดการชนกับ submit handler เก่าในจังหวะส่งงาน
 
-## ต้องอัปเดต Backend ด้วย
-ใช้ `wjd-v1.5.6.3-backend-direct-upload-user-admin.zip`
+## Backend
+ใช้ Backend v1.5.6.3 ได้ ไม่ต้องอัปเดต Apps Script เพิ่ม
