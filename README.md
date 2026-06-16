@@ -1,13 +1,13 @@
-# WJD Digital Art Gallery v1.5.2.1 — Login Button Hotfix
+# WJD Digital Art Gallery v1.5.2.2 — Login Core Fix
 
-แก้บั๊กหลังเชื่อม Google Drive ที่ปุ่มเลือกบัญชีทดลองไม่ตอบสนอง
+แก้บั๊กที่เลือกบัญชีแล้วกลับไปยังสถานะ "ยังไม่ได้เข้าสู่ระบบ"
 
 ## สิ่งที่แก้
-- ปุ่มมุมขวาบน "ยังไม่ได้เข้าสู่ระบบ / เลือกบัญชีทดลอง" กดได้แน่นอนขึ้น
-- เพิ่มปุ่มสำรอง "เลือกบัญชีเพื่อเริ่มใช้งาน" มุมล่างขวาเมื่อยังไม่ได้ login
-- เพิ่ม overlay สำรองเลือกบัญชี หากระบบ login หลักไม่แสดง
-- ทำให้การผูก event listener ปลอดภัยขึ้น ไม่ให้ element เดียวที่มีปัญหาหยุดสคริปต์ทั้งหมด
-- ยังเชื่อม Google Drive Backend ของโรงเรียนเหมือน v1.5.2
+- แก้แกนหลักของระบบ login: selectAccount / restoreSession / updateAuthUI
+- updateAuthUI ปลอดภัยขึ้น ไม่ให้ element บางตัวที่หาไม่เจอทำให้ login ล้มเหลว
+- หลังเลือกบัญชีจะบังคับแสดงหน้า Home และซ่อนหน้า Login
+- ระบบสำรองจะตรวจซ้ำ ถ้า login ไม่สำเร็จจะบันทึก session แล้ว reload อัตโนมัติ
+- ยังเชื่อม Google Drive Backend โรงเรียนเหมือน v1.5.2
 
 ## วิธีอัปเดต
-อัปโหลดไฟล์ชุดนี้ทับไฟล์เดิมใน GitHub repository แล้ว Vercel จะ Deploy ใหม่อัตโนมัติ
+อัปโหลด `index.html`, `README.md`, `vercel.json` ทับใน GitHub แล้วรอ Vercel deploy ใหม่
