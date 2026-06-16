@@ -1,28 +1,20 @@
-# WJD Digital Art Gallery v1.5.0 — Online Ready
+# WJD Digital Art Gallery v1.5.2 — Google Drive Connected
 
-เวอร์ชันนี้เตรียมจาก v1.4.4.12 ที่แก้ระบบเทมเพลตห้องผ่านแล้ว
+เวอร์ชันนี้เชื่อมเว็บกับ Google Apps Script Backend ของบัญชีโรงเรียนแล้ว
 
-## เป้าหมาย
-ขึ้นออนไลน์ให้เปิดผ่านลิงก์ได้จากมือถือ แท็บเล็ต และคอมพิวเตอร์
+## Backend URL
 
-## ขอบเขตของ v1.5.0
-- ยังไม่เชื่อม Google Drive
-- ยังไม่ซิงก์ข้อมูลข้ามเครื่อง
-- ข้อมูลยังเก็บใน localStorage ของแต่ละอุปกรณ์
-- ใช้สำหรับทดสอบการแสดงผลออนไลน์และ Responsive ก่อน
+`https://script.google.com/macros/s/AKfycby9X2q7YZ_q33gdMoDA_6dljZqmdgWg1GMMkfz5_XE1qg7SLs_Fvvdti4j2AhxMxNuUDw/exec`
 
-## วิธี Deploy บน Vercel
-1. แตกไฟล์ zip
-2. อัปโหลดโฟลเดอร์นี้ขึ้น GitHub repository
-3. เข้า Vercel แล้ว Import repository
-4. เลือก Static / Other
-5. Build Command ปล่อยว่าง
-6. Output Directory ใช้ `.`
-7. กด Deploy
+## สิ่งที่เพิ่มจาก v1.5.0
 
-## วิธี Deploy บน GitHub Pages
-1. อัปโหลดไฟล์ทั้งหมดไว้ที่ root ของ repository
-2. เปิด Settings → Pages
-3. เลือก Deploy from a branch
-4. เลือก branch หลักและ root folder
-5. Save แล้วรอลิงก์ Pages
+- ส่งผลงานแล้วพยายามบันทึกไปยัง Google Drive โรงเรียน
+- บันทึกข้อมูลผลงานลง Google Sheets ของโรงเรียน
+- ถ้าส่ง Drive ไม่สำเร็จ ยังบันทึก localStorage ไว้ก่อน
+- เพิ่มสถานะในหน้าผลงานของนักเรียนว่า Google Drive ซิงก์สำเร็จหรือยัง
+
+## สิ่งที่ยังเป็นข้อจำกัด
+
+- ระบบครูในหน้าเว็บยังอ่านจาก localStorage เป็นหลัก
+- การดึงรายการจาก Google Sheets กลับมาแสดงในเว็บจะทำในเวอร์ชันถัดไป
+- ยังเป็นระบบทดลอง ไม่ใช่ระบบล็อกอินจริง
