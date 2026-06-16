@@ -1,17 +1,17 @@
-# WJD Digital Art Gallery v1.5.9.1 — Simple Gift Exchange Fix
+# WJD Digital Art Gallery v1.5.9.3 — Gift Submit Override Fix
 
 ## แก้ปัญหา
-- ส่งของขวัญไม่สำเร็จ เพราะคลังของกลางใน Google Sheets ยังไม่ตรงกับคลังในเครื่อง
-- ของขวัญไม่เข้าคลังเพื่อน
-- ระบบเสนอแลกของซับซ้อนและแจ้งว่าเลือกข้อมูลไม่ครบ
+- ส่งของขวัญไม่สำเร็จ: Cannot read properties of null (reading 'reset')
+- ส่งของแลกไม่สำเร็จ: Cannot read properties of null (reading 'reset')
 
-## ปรับระบบ
-- ส่งของขวัญ: ผู้รับได้ของทันที ผู้ส่งได้ +1 แต้ม
-- แลกของแบบง่าย: ส่งของไปให้เพื่อนก่อน ถ้าเพื่อนตกลงให้เพื่อนส่งของกลับมาเอง
-- ไม่ใช้ระบบข้อเสนอค้างรออนุมัติสำหรับการแลก
-- ก่อนส่ง ระบบจะส่งคลังของล่าสุดของผู้ส่งไป Backend เพื่อป้องกันของหาย/ส่งไม่สำเร็จ
-- แสดงข้อความ error ชัดขึ้นถ้าส่งไม่สำเร็จ
+## สาเหตุ
+หน้าเว็บยังมี submit listener เก่าซ้อนอยู่ ทำให้ listener เก่าเรียก event.currentTarget.reset() หลัง async แล้ว error
 
-## ต้องอัปเดต Backend
-ใช้ `wjd-v1.5.9.1-backend-simple-gift-exchange.zip`
-แล้วเปิด `?action=setup`
+## สิ่งที่แก้
+- เพิ่ม submit handler ชั้น capture ที่หยุด listener เก่าอย่างเด็ดขาด
+- ใช้ handler ใหม่ส่งของขวัญ/แลกของเพียงชุดเดียว
+- reset ฟอร์มแบบปลอดภัย
+- แลกของใช้ระบบง่าย: ส่งของไปก่อน ผู้ส่งได้ +1 แต้ม
+
+## Backend
+ใช้ Backend v1.5.9.1 ต่อได้ ไม่ต้องอัปเดต Apps Script
