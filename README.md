@@ -1,16 +1,15 @@
-# WJD Digital Art Gallery v1.5.2.3 — Navigation & Session Fix
+# WJD Digital Art Gallery v1.5.2.4 — Stable Login/Menu + Passive Drive Sync
 
-แก้อาการหลัง v1.5.2.2:
-- เมนูด้านบนกดไม่ได้
-- ปุ่มต่าง ๆ ในเว็บไม่ตอบสนอง
-- กด F5 แล้วหลุด login
+เวอร์ชันนี้สร้างใหม่จากฐาน v1.5.0 ที่เมนูและปุ่มใช้งานได้ แล้วเพิ่ม Google Drive Sync แบบไม่ยุ่งกับระบบปุ่มเดิม
 
-## วิธีแก้ในเวอร์ชันนี้
-- สร้างจาก v1.5.2 เดิม แล้วแก้เฉพาะแกน login/session อย่างปลอดภัย
-- ยกเลิกระบบดักคลิกแบบครอบทั้งหน้า
-- ทำให้ event listener ปลอดภัยขึ้น ถ้ามี element บางตัวหาย จะไม่ทำให้สคริปต์ทั้งเว็บหยุด
-- กู้ session จาก localStorage หลัง Refresh
-- ยังเชื่อม Google Drive Backend โรงเรียนเหมือนเดิม
+## เป้าหมาย
+- แก้ปัญหาปุ่มเมนู/ปุ่มต่าง ๆ กดไม่ได้
+- แก้ปัญหาเลือกบัญชีไม่ได้
+- ไม่แก้แกน Login/Menu อีก
+- เชื่อม Google Drive เป็นตัวเสริมหลังการส่งงาน
 
-## วิธีอัปเดต
-อัปโหลด `index.html`, `README.md`, `vercel.json` ทับใน GitHub แล้วรอ Vercel deploy ใหม่
+## Backend โรงเรียน
+https://script.google.com/macros/s/AKfycby9X2q7YZ_q33gdMoDA_6dljZqmdgWg1GMMkfz5_XE1qg7SLs_Fvvdti4j2AhxMxNuUDw/exec
+
+## หมายเหตุ
+ระบบจะให้ flow เดิมของเว็บบันทึกผลงานก่อน แล้วค่อยส่งสำเนาผลงานล่าสุดไป Google Drive/Sheets ของโรงเรียน
