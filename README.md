@@ -1,12 +1,9 @@
-# WJD Digital Art Gallery v1.6.7 — Avatar Only & Profile Simplify
+# WJD Digital Art Gallery v1.6.7.1 — Pixel Avatar in Edit Profile
 
-## ปรับระบบโปรไฟล์
-- ตัด/ซ่อนระบบอัปโหลดรูปโปรไฟล์จากมือถือ
-- ใช้ Avatar อย่างเดียว
-- เพิ่มตัวเลือก Avatar หลายหมวด
-- นักเรียนเปลี่ยน Avatar ได้เอง
-- Avatar บันทึกลง Profiles เพื่อแสดงข้ามเครื่อง
-- ระบบเก่าที่พยายามแสดง profile photo จะถูกบังคับ fallback เป็น avatar
+- ไม่แบ่งหมวด Avatar
+- ย้าย Avatar ไปที่แก้ไขโปรไฟล์
+- มี Pixel Avatar 15 ตัวเลือก
+- รูปโปร่งใสฝังไว้ในแอปด้วย base64
+- ตัด/ซ่อนเครื่องมืออัปโหลดรูปตัวเอง
 
-## ต้องอัปเดต Backend
-ใช้ `wjd-v1.6.7-backend-avatar-only.zip` แล้วเปิด `?action=setup`
+ต้องอัปเดต Backend v1.6.7.1 แล้วเปิด ?action=setup
